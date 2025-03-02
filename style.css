@@ -1,0 +1,294 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: url(wallpaper.jpg);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    color: #fff;
+}
+
+.container {
+    background: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.1);
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 600px;
+    overflow: hidden;
+}
+
+/* Sol Panel Stilleri */
+.left-panel {
+    background: linear-gradient(135deg, #1a0000, #3d0000);
+    border-right: 1px solid rgba(255, 0, 0, 0.2);
+    color: white;
+    padding: 2rem;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.brand i {
+    font-size: 2rem;
+    color: #ff0000;
+}
+
+.brand h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.service-list {
+    flex: 1;
+}
+
+.service-list h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 0.5rem;
+}
+
+.service-item:hover {
+    background: rgba(255, 0, 0, 0.2);
+    transform: translateX(5px);
+}
+
+.service-item.active {
+    background: rgba(255, 0, 0, 0.3);
+    border-left: 4px solid #ff0000;
+}
+
+.service-item i {
+    font-size: 1.2rem;
+}
+
+/* Ana İçerik Stilleri */
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background: rgba(20, 20, 20, 0.95);
+}
+
+.generator-box {
+    background: rgba(25, 25, 25, 0.9);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.service-info {
+    margin-bottom: 2rem;
+}
+
+.service-info h2 {
+    color: #ff0000;
+    margin-bottom: 0.5rem;
+}
+
+.service-info p {
+    color: #aaa;
+}
+
+.code-display {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+input {
+    flex: 1;
+    padding: 1rem;
+    font-size: 1.2rem;
+    background: rgba(15, 15, 15, 0.9);
+    border: 2px solid rgba(255, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #fff;
+}
+
+input:focus {
+    border-color: #ff0000;
+    outline: none;
+}
+
+button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    background: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+button:hover {
+    background: #cc0000;
+    transform: translateY(-2px);
+}
+
+.loading-bar {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    margin: 1.5rem 0;
+    overflow: hidden;
+    display: none;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #ff0000, #cc0000);
+    width: 0%;
+    transition: width 0.1s ease;
+}
+
+/* İstatistik Kartları */
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.stat-item {
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.stat-info span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.stat-info p {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Son Üretilen Kodlar */
+.recent-codes {
+    background: rgba(25, 25, 25, 0.9);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
+.recent-codes h3 {
+    color: #ff0000;
+    margin-bottom: 1rem;
+}
+
+.code-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Son üretilen kodlar için ek stiller */
+.code-item {
+    background: rgba(30, 30, 30, 0.95);
+    border-left: 4px solid #ff0000;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 2px 4px rgba(255, 0, 0, 0.1);
+    animation: slideIn 0.3s ease;
+}
+
+.code-text {
+    font-family: monospace;
+    font-size: 1rem;
+    color: #ff0000;
+}
+
+.code-service {
+    background: rgba(255, 0, 0, 0.1);
+    color: #ff0000;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.code-time {
+    color: #aaa;
+    font-size: 0.8rem;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#status {
+    transition: color 0.3s;
+    color: #aaa;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem;
+        background: rgba(15, 15, 15, 0.98);
+    }
+    
+    .left-panel {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 0, 0, 0.2);
+    }
+}

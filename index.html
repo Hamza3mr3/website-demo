@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kod Üretici</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="brand">
+                <i class="fas fa-key"></i>
+                <h1>Kod Üretici</h1>
+            </div>
+            
+            <div class="service-list">
+                <h2>Hizmetler</h2>
+                <div class="service-item active" data-service="valorant">
+                    <span>Valorant</span>
+                </div>
+                <div class="service-item" data-service="roblox">
+                    <span>Roblox</span>
+                </div>
+                <div class="service-item" data-service="genshin">
+                    <span>Genshin Impact</span>
+                </div>
+                <div class="service-item" data-service="fortnite">
+                    <span>Fortnite</span>
+                </div>
+                <div class="service-item" data-service="pubg">
+                    <span>PUBG Mobile</span>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <i class="fas fa-code"></i>
+                    <div class="stat-info">
+                        <span id="totalCodes">0</span>
+                        <p>Üretilen Kod</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-info">
+                        <span id="activeUsers">0</span>
+                        <p>Aktif Kullanıcı</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="generator-box">
+                <div class="service-info">
+                    <h2>Steam Key Generator</h2>
+                    <p>Premium kod üretmek için aşağıdaki butona tıklayın</p>
+                </div>
+                
+                <div class="code-display">
+                    <input type="text" id="codeOutput" readonly placeholder="XXXX-XXXX-XXXX">
+                    <button onclick="copyCode()" id="copyBtn">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                
+                <div id="loadingBar" class="loading-bar">
+                    <div class="progress"></div>
+                </div>
+                
+                <button onclick="startGenerator()" id="generateBtn">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Kod Üret</span>
+                </button>
+                
+                <p id="status"></p>
+            </div>
+            
+            <div class="recent-codes">
+                <h3>Son Üretilen Kodlar</h3>
+                <div class="code-list" id="codeList">
+                    <!-- Kodlar JavaScript ile eklenecek -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
